@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row text-center mt-4">
+    <div class="col">
+      <img src="https://i.blogs.es/4a9cb1/titanic/840_560.jpeg" alt=""
+        class="img-fluid" width="200px">
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h2>chonchasss</h2>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-2">
+      <label for="txtId" class="from-label">ID</label>
+      <input type="number" name="id" id="txtId" class="form-control" [(ngModel)]="provider.id" disabled="true">
+    </div>
+    <div class="col-md-4">
+      <label for="txtNombre" class="from-label">Nombre</label>
+      <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]="provider.nombre">
+    </div>
+    <div class="col-md-2">
+      <label for="txtEdad" class="from-label">Direccion</label>
+      <input type="text" name="id" id="txtDireccion" class="form-control" [(ngModel)]="provider.direccion">
+    </div>
+    <div class="col-md-4">
+      <label for="txtDesc" class="from-label">Correo</label>
+      <input type="text" name="id" id="txtCorreo" class="form-control" [(ngModel)]="provider.correo">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button class="btn btn-success" type="button" (click)="postProvider(provider)">Agregar</button>
+      <button class="btn btn-warning m-2" type="button" (click)="onUpdateProvider(provider)">Modificar</button>
+      <button class="btn btn-danger" type="button" (click)="onDeleteProvider(provider.id)">Eliminar</button>
+      <button class="btn btn-primary m-2" type="button" (click)="clear()">Limpiar</button>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <table id="dtMascota" class="table table-striped" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Seleccionar</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let provider of providers">
+            <td><input type="button" value="Seleccionar" (click)="onSetData(provider)"></td>
+            <td> {{ provider.id }} </td>
+            <td>{{ provider.nombre }}</td>
+            <td>{{ provider.direccion }}</td>
+            <td>{{ provider.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
